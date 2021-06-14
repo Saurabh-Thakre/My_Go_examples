@@ -1,18 +1,19 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
-
-const aConst int = 65
 
 func main() {
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter your text: ")
-	input, _ := reader.ReadString('\n')
-	fmt.Println("Entered String :", input)
+	states := make(map[string]string)
+	fmt.Println(states)
+	states["WA"] = "Washington"
+	states["CA"] = "California"
+	states["NO"] = "New Orleans"
+	fmt.Println(states)
+
+	orleans := states["NO"]
+	fmt.Println(orleans)
 
 }
