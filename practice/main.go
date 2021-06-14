@@ -1,18 +1,19 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
-
-const aConst int = 65
 
 func main() {
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter your text: ")
-	input, _ := reader.ReadString('\n')
-	fmt.Println("Entered String :", input)
+	var value = 22
+	var p = &value
+	fmt.Println("Value of p :", *p)
+	fmt.Println("Value of p :", p)
+
+	*p = *p / 2
+	fmt.Println("Value of p :", *p)
+	fmt.Println("Value of p :", p)
+	fmt.Println("Value of p :", value)
 
 }
