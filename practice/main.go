@@ -4,15 +4,23 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
 
-const aConst int = 65
-
 func main() {
-
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter your text: ")
-	input, _ := reader.ReadString('\n')
-	fmt.Println("Entered String :", input)
+	fmt.Println("Please Enter Correct Password To Enter !")
+	input1, _ := reader.ReadString('\n')
+	float2, err := strconv.ParseInt(strings.TrimSpace(input1), 0, 32)
 
+	if float2 == 42 {
+
+		fmt.Println("You've granted the permission, you can enter !")
+	} else if err != nil {
+		fmt.Println(err)
+
+	} else {
+		fmt.Println("Intruder Detected!!!, Calling Security")
+	}
 }
