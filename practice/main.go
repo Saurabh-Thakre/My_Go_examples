@@ -1,18 +1,20 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
-
-const aConst int = 65
 
 func main() {
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter your text: ")
-	input, _ := reader.ReadString('\n')
-	fmt.Println("Entered String :", input)
+	myfunction()
+	sum := sumvalues(2, 5)
+	fmt.Println("Sum is: ", sum)
+}
 
+func myfunction() {
+	fmt.Println("This is my function")
+}
+
+func sumvalues(value1 int, value2 int) int {
+	return value1 + value2
 }
