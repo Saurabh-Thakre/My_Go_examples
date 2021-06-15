@@ -1,18 +1,23 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
-const aConst int = 65
-
+// for statement
 func main() {
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter your text: ")
-	input, _ := reader.ReadString('\n')
-	fmt.Println("Entered String :", input)
+	colors := []string{"Red", "Purple", "Orange"}
+	fmt.Println(colors)
+
+	for i := 0; i < len(colors); i++ {
+		fmt.Println(colors[i])
+	}
+
+	// Using Range Function
+
+	for i := range colors {
+		fmt.Println(colors[i])
+	}
 
 }
