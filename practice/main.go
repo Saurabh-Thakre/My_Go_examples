@@ -5,15 +5,21 @@ import (
 )
 
 func main() {
+	poodle := Dog{"Poodle", 11, "Woof Woof"}
+	fmt.Printf("%+v\n", poodle)
+	poodle.Speak()
+	poodle.Sound = "Arf"
+	poodle.Speak()
 
-	states := make(map[string]string)
-	fmt.Println(states)
-	states["WA"] = "Washington"
-	states["CA"] = "California"
-	states["NO"] = "New Orleans"
-	fmt.Println(states)
+}
 
-	orleans := states["NO"]
-	fmt.Println(orleans)
+type Dog struct {
+	Breed  string
+	Weight int
+	Sound  string
+}
 
+func (d Dog) Speak() {
+
+	fmt.Println(d.Sound)
 }
