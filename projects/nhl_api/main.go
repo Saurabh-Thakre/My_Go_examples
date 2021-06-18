@@ -30,9 +30,9 @@ func main() {
 		log.Fatalf("Error while getting all teams: %v", err)
 	}
 
-	for _, team := range teams {
+	for _, teamIndex := range teams {
 		log.Println("----------------------------")
-		log.Printf("Name: %v,\t City: %v", team.Name, team.Venue.City)
+		log.Printf("Name: %v,\t City: %v", teamIndex.Name, teamIndex.Venue.City)
 		log.Println("----------------------------")
 	}
 
