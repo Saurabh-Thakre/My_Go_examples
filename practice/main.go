@@ -46,7 +46,7 @@ func main() {
 		case int:
 			fmt.Println("I'm a ini")
 		default:
-			fmt.Println("Don't know what type %T I am\n", t)
+			fmt.Printf("Don't know what type %T I am\n", t)
 
 		}
 	}
