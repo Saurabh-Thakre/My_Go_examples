@@ -1,25 +1,30 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	poodle := Dog{"Poodle", 11, "Woof Woof"}
-	fmt.Printf("%+v\n", poodle)
-	poodle.Speak()
-	poodle.Sound = "Arf"
-	poodle.Speak()
 
-}
+	i := 1
+	for i <= 3 {
+		fmt.Println(i)
+		i = i + 1
+		//Above is the basic one with a single condition
+	}
 
-type Dog struct {
-	Breed  string
-	Weight int
-	Sound  string
-}
+	for j := 7; j <= 9; j++ {
+		fmt.Println(j)
+		// This is the classic initial/condition/after for loop
+	}
 
-func (d Dog) Speak() {
+	for {
+		fmt.Println("loop")
+		break
+	}
 
-	fmt.Println(d.Sound)
+	for n := 0; n <= 5; n++ {
+		if n%2 == 0 {
+			continue
+		}
+		fmt.Println(n)
+	}
 }
