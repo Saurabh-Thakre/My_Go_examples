@@ -1,30 +1,56 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 
-	i := 1
-	for i <= 3 {
-		fmt.Println(i)
-		i = i + 1
-		//Above is the basic one with a single condition
+	// Here's a basic switch
+
+	i := 3
+	fmt.Print("Write ", i, " as ")
+	switch i {
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	}
+	// You can use commans to seperate multiple expressions in the same case statement
+
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:
+		fmt.Println("Yayy, It's the Weekend")
+	default:
+		fmt.Println("Nah, It's just a Weekday")
+	}
+	//switch without an expression is an alternate way to express if/else logic
+
+	t := time.Now()
+
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("It's before noon")
+	default:
+		fmt.Println("It's after noon")
 	}
 
-	for j := 7; j <= 9; j++ {
-		fmt.Println(j)
-		// This is the classic initial/condition/after for loop
-	}
+	// A type switch compares types instead of values. Could be used to discover the type of an interface value
+	whatAmI := func(i interface{}) {
+		switch t := i.(type) {
+		case bool:
+			fmt.Println("I'm a bool")
+		case int:
+			fmt.Println("I'm a ini")
+		default:
+			fmt.Println("Don't know what type %T I am\n", t)
 
-	for {
-		fmt.Println("loop")
-		break
-	}
-
-	for n := 0; n <= 5; n++ {
-		if n%2 == 0 {
-			continue
 		}
-		fmt.Println(n)
 	}
+	whatAmI(true)
+	whatAmI(5)
+	whatAmI("string ? or what !!")
 }
