@@ -1,56 +1,33 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
 func main() {
+	//Creating an int array a
+	var a [5]int
+	fmt.Println("emp: ", a)
 
-	// Here's a basic switch
+	// Setting value in array for specific index
+	a[4] = 100
+	a[2] = 25
+	fmt.Println("set: ", a)
+	fmt.Println("get: ", a[4])
 
-	i := 3
-	fmt.Print("Write ", i, " as ")
-	switch i {
-	case 1:
-		fmt.Println("one")
-	case 2:
-		fmt.Println("two")
-	case 3:
-		fmt.Println("three")
-	}
-	// You can use commans to seperate multiple expressions in the same case statement
+	//builtin len returns the length of an array
 
-	switch time.Now().Weekday() {
-	case time.Saturday, time.Sunday:
-		fmt.Println("Yayy, It's the Weekend")
-	default:
-		fmt.Println("Nah, It's just a Weekday")
-	}
-	//switch without an expression is an alternate way to express if/else logic
+	fmt.Println("len: ", len(a))
 
-	t := time.Now()
+	// Declare and initialize an array in one line
 
-	switch {
-	case t.Hour() < 12:
-		fmt.Println("It's before noon")
-	default:
-		fmt.Println("It's after noon")
-	}
+	b := [5]int{1, 15, 234, 16, 44}
+	fmt.Println("dcl :", b)
 
-	// A type switch compares types instead of values. Could be used to discover the type of an interface value
-	whatAmI := func(i interface{}) {
-		switch t := i.(type) {
-		case bool:
-			fmt.Println("I'm a bool")
-		case int:
-			fmt.Println("I'm a ini")
-		default:
-			fmt.Printf("Don't know what type %T I am\n", t)
-
+	var twoD [2][3]int
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 3; j++ {
+			twoD[i][j] = i + j
 		}
 	}
-	whatAmI(true)
-	whatAmI(5)
-	whatAmI("string ? or what !!")
+	fmt.Println("2D :", twoD)
+
 }
